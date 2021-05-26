@@ -1,0 +1,46 @@
+general {
+        colors = true
+        interval = 5
+        separator = " "
+}
+
+
+order += "wireless _first_"
+order += "disk /"
+order += "battery all"
+order += "tztime local"
+order += "time"
+order += "volume master"
+
+wireless _first_ {
+    format_up = "W: (%essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+disk / {
+	format = "🗂️ %used/%total"
+}
+
+battery all {
+    format = "🔋 %percentage"
+	format_down = "No battery"
+}
+
+tztime local {
+    format = "📅 %a %d %b %Y"
+}
+
+time {
+	format = "⏲️ %H:%M"
+}
+
+volume master {
+    format = "♪: %volume"
+    format_muted = "♪: muted (%volume)"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+
+
